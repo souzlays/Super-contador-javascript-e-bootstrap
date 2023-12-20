@@ -12,11 +12,18 @@ function contar() {
     var i = Number(inicio.value)
     var f = Number(fim.value)
     var p = Number(passo.value)
+    if (p <=0) {
+      window.alert('Passo Inválido! Considerando PASSO igual a 1')
+      p = 1
+    }
+
     if (i < f) {
+      // Contagem crescente
       for (var c = i; c <= f; c += p) {
         res.innerHTML += ` ${c} \u{27A1}`
       }
     } else {
+      // Contagem regressiva
         for (var c = i; c >= f; c -= p) {
           res.innerHTML += ` ${c} \u{21AA}`
     }
